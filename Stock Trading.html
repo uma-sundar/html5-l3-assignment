@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Stock Trading</title>
+<style>   
+ table, th, td {
+  border: 1px solid black;
+}
+</style>
+    <script>
+        function validateStock() {
+            var quantity = document.forms['stock']['qty'].value;
+            quantity = parseInt(quantity);
+            if(quantity < 10 || quantity > 100 || quantity % 10 !== 0)
+                alert("invalid,it should be in 10s");
+        }
+    </script>
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <th>ticker</th>
+            <th>price</th>
+        </tr>
+        <tr>
+            <td>wipro</td>
+            <td>298.45</td>
+        </tr>
+        <tr>
+            <td>infy</td>
+            <td>949.95</td>
+        </tr>
+        <tr>
+            <td>tcs</td>
+            <td>2713.70</td>
+        </tr>
+        <tr>
+            <td>techm</td>
+            <td>485.85</td>
+        </tr>
+    </table>
+</center>
+<center>
+    <form name="stock" onsubmit="validateStock()">
+        <h1>Stock Trading</h1>
+        <table>
+            <tr>
+                <td>ticker:</td>
+                <td><input type="text" name="ticker"></input></td>
+            </tr>
+            <tr>
+                <td>qantity:</td>
+                <td><input type="text" name="qty"></input></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>
